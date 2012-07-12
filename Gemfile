@@ -7,6 +7,9 @@ gem 'rails', '3.2.6'
 
 gem 'sqlite3'
 
+gem 'paper_trail'
+gem 'devise'
+
 group :test, :development do
   gem 'rspec-rails', '~> 2.0'
 end
