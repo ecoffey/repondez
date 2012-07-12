@@ -1,4 +1,6 @@
 Repondez::Application.routes.draw do
+  mount RailsAdmin::Engine => '/administrator', :as => 'rails_admin'
+
   devise_for :admins
 
   root :to => 'invites#index'
