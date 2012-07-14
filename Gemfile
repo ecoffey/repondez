@@ -9,7 +9,6 @@ gem 'sqlite3'
 
 gem 'paper_trail'
 gem 'devise'
-gem 'rails_admin'
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.0'
