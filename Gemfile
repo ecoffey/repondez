@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.6'
+gem 'rails', '3.2.7'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -9,6 +9,11 @@ gem 'sqlite3'
 
 gem 'paper_trail'
 gem 'devise'
+
+gem 'twitter-bootstrap-rails'
+
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 group :test, :development do
   gem 'rspec-rails', '~> 2.0'

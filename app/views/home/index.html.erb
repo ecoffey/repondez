@@ -1,0 +1,11 @@
+<h1>Eoin and SJ</h1>
+<p>
+ Some stuff about venue location and what not
+</p>
+<%= form_tag('/responses', method: :put) do %>
+  <p><%= label_tag :passphrase, 'Pass phrase' %></p>
+  <p><%= text_field_tag :passphrase, nil, placeholder: 'Enter pass phrase from invite...' %></p>
+  <p><%= label_tag :guests, 'Number of guests (including yourself)' %></p>
+  <p><%= number_field_tag :guests, nil %></p>
+  <p><%= submit_tag 'Respond' %></p>
+<% end %>

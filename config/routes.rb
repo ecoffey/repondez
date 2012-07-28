@@ -1,8 +1,10 @@
 Repondez::Application.routes.draw do
   devise_for :admins
 
-  root :to => 'invites#index'
+  root :to => 'home#index'
   resources :invites
+
+  put '/responses', controller: 'responses', action: 'update'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
