@@ -1,45 +1,50 @@
-<%= form_for(@invite) do |f| %>
-  <% if @invite.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@invite.errors.count, "error") %> prohibited this invite from being saved:</h2>
-
-      <ul>
-      <% @invite.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @invite, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :address, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :address, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :passphrase, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :passphrase, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :sent, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :sent, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :responded, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :responded, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :guests, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :guests, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :tier, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :tier, :class => 'number_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_area :address %>
-  </div>
-  <div class="field">
-    <%= f.label :passphrase %><br />
-    <%= f.text_field :passphrase %>
-  </div>
-  <div class="field">
-    <%= f.label :sent %><br />
-    <%= f.check_box :sent %>
-  </div>
-  <div class="field">
-    <%= f.label :responded %><br />
-    <%= f.check_box :responded %>
-  </div>
-  <div class="field">
-    <%= f.label :guests %><br />
-    <%= f.number_field :guests %>
-  </div>
-  <div class="field">
-    <%= f.label :tier %><br />
-    <%= f.number_field :tier %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                invites_path, :class => 'btn' %>
   </div>
 <% end %>

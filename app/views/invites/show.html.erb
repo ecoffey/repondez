@@ -1,40 +1,33 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Invite -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Name:</b>
-  <%= @invite.name %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @invite.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
+  <dd><%= @invite.address %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:passphrase) %>:</strong></dt>
+  <dd><%= @invite.passphrase %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sent) %>:</strong></dt>
+  <dd><%= @invite.sent %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:responded) %>:</strong></dt>
+  <dd><%= @invite.responded %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:guests) %>:</strong></dt>
+  <dd><%= @invite.guests %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tier) %>:</strong></dt>
+  <dd><%= @invite.tier %></dd>
+</dl>
 
-<p>
-  <b>Address:</b>
-  <%= @invite.address %>
-</p>
-
-<p>
-  <b>Passphrase:</b>
-  <%= @invite.passphrase %>
-</p>
-
-<p>
-  <b>Sent:</b>
-  <%= @invite.sent %>
-</p>
-
-<p>
-  <b>Responded:</b>
-  <%= @invite.responded %>
-</p>
-
-<p>
-  <b>Guests:</b>
-  <%= @invite.guests %>
-</p>
-
-<p>
-  <b>Tier:</b>
-  <%= @invite.tier %>
-</p>
-
-
-<%= link_to 'Edit', edit_invite_path(@invite) %> |
-<%= link_to 'Back', invites_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              invites_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_invite_path(@invite), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              invite_path(@invite),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>
