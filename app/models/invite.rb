@@ -4,7 +4,9 @@ class Invite < ActiveRecord::Base
   has_paper_trail
 
   def respond(guests)
-    raise 'Invite not sent' unless self.sent
+    unless self.sent
+      errors.add :base, 'Invite not sent yet'
+    end
 
     self.responded = true
     self.guests = guests

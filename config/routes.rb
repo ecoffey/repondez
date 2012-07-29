@@ -7,5 +7,8 @@ Repondez::Application.routes.draw do
     resources :invites
   end
 
-  put '/responses', controller: 'responses', action: 'update'
+  get '/rsvp', to: 'responses#new'
+  put '/respond', to: 'responses#update'
+
+  get '/thank_you', to: 'home#thank_you'
 end
