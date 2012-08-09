@@ -1,0 +1,7 @@
+* Bulk edit invites
+* Import invites from CSV
+* Deploy to heroku, and import tier 1 guests
+
+* Refine RSVP form
+* Collect emails?
+* Provide calendar links?
