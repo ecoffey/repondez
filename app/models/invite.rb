@@ -1,14 +1,19 @@
 class Invite < ActiveRecord::Base
   attr_accessible :address, :guests, :name, :passphrase, :responded, :sent, :tier
 
-  has_paper_trail
-
-  def respond(guests)
-    unless self.sent
-      errors.add :base, 'Invite not sent yet'
+  state_machine :initial => :unsent do
+    event :send_to do
+      transition :unsent => :sent
     end
 
-    self.responded = true
-    self.guests = guests
+    event :respond_to do
+      transition :sent => :responded
+    end
+  end
+
+  scope :sent, where(:state => "sent")
+
+  def initialize attributes = nil, options = {}
+    super attributes, options
   end
 end

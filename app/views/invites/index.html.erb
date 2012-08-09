@@ -2,6 +2,7 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
+<%= will_paginate @invites %>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -9,8 +10,7 @@
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:address) %></th>
       <th><%= model_class.human_attribute_name(:passphrase) %></th>
-      <th><%= model_class.human_attribute_name(:sent) %></th>
-      <th><%= model_class.human_attribute_name(:responded) %></th>
+      <th><%= model_class.human_attribute_name(:state) %></th>
       <th><%= model_class.human_attribute_name(:guests) %></th>
       <th><%= model_class.human_attribute_name(:tier) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -24,8 +24,7 @@
         <td><%= invite.name %></td>
         <td><%= invite.address %></td>
         <td><%= invite.passphrase %></td>
-        <td><%= invite.sent %></td>
-        <td><%= invite.responded %></td>
+        <td><%= invite.state %></td>
         <td><%= invite.guests %></td>
         <td><%= invite.tier %></td>
         <td><%=l invite.created_at %></td>
@@ -42,6 +41,7 @@
     <% end %>
   </tbody>
 </table>
+<%= will_paginate @invites %>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_invite_path,

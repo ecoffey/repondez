@@ -15,6 +15,8 @@ gem 'twitter-bootstrap-rails'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 
+gem 'state_machine'
+
 group :test, :development do
   gem 'rspec-rails', '~> 2.0'
 end

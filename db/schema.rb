@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120714024215) do
+ActiveRecord::Schema.define(:version => 20120808043321) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -35,12 +35,11 @@ ActiveRecord::Schema.define(:version => 20120714024215) do
     t.string   "name"
     t.text     "address"
     t.string   "passphrase"
-    t.boolean  "sent"
-    t.boolean  "responded"
     t.integer  "guests"
     t.integer  "tier"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "state"
   end
 
   add_index "invites", ["passphrase"], :name => "index_invites_on_passphrase", :unique => true
