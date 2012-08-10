@@ -1,7 +1,23 @@
 <%= form_tag(respond_path, method: :put) do %>
-  <p><%= label_tag :passphrase, 'Pass phrase' %></p>
-  <p><%= text_field_tag :passphrase, nil, placeholder: 'Enter pass phrase from invite...' %></p>
-  <p><%= label_tag :guests, 'Number of guests (including yourself)' %></p>
-  <p><%= number_field_tag :guests, nil %></p>
+  <div class="span5">
+    <h4>From The Invite</h4>
+    <p><%= label_tag :name, 'Name' %></p>
+    <p><%= text_field_tag :name %></p>
+
+    <p><%= label_tag :address, 'Address' %></p>
+    <p><%= text_area_tag :address %></p>
+  </div>
+
+  <div class="span5">
+    <h4>Extra</h4>
+    <p><%= label_tag :guests, 'Number of guests (including yourself)' %></p>
+    <p><%= number_field_tag :guests, nil %></p>
+
+    <p><%= label_tag :suggested_song, 'Suggest a song!' %></p>
+    <p><%= text_field_tag :suggested_song, nil %></p>
+
+  </div>
+
+  <div style="clear:both;">&nbsp;</div>
   <p><%= submit_tag 'Respond' %></p>
 <% end %>

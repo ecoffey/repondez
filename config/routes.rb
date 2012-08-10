@@ -4,6 +4,8 @@ Repondez::Application.routes.draw do
   devise_for :admins, :path => 'admin'
 
   scope '/admin/' do
+    post 'invites/bulk_send_invites', :to => 'invites#bulk_send_invites'
+
     resources :invites
   end
 

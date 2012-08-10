@@ -1,10 +1,22 @@
 class InvitesController < ApplicationController
   before_filter :authenticate_admin!
 
+  def bulk_send_invites
+    @invites = Invite.find(params[:invite_ids])
+
+    @invites.each do |invite|
+      invite.send_to
+    end
+
+    redirect_to invites_path
+  end
+
   # GET /invites
   # GET /invites.json
   def index
-    @invites = Invite.order(:state, :name).paginate(:page => params[:page], :per_page => 20)
+    @invites = Invite.order(:tier, :state, :name).paginate(:page => params[:page], :per_page => 20)
+
+    puts @invites.inspect
 
     respond_to do |format|
       format.html # index.html.erb

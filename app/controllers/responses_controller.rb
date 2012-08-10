@@ -4,7 +4,9 @@ class ResponsesController < ApplicationController
   end
 
   def update
-    @invite = Invite.sent.where(:passphrase => params[:passphrase], :address => params[:address], :name => params[:name]).first
+    @invite = Invite.sent.where(
+        :address => params[:address],
+        :name => params[:name]).first
 
     if @invite.nil?
       flash[:error] = "Could not find that invite"
@@ -12,9 +14,9 @@ class ResponsesController < ApplicationController
     end
 
     @invite.guests = params[:guests]
-    @invite.respond_to!
+    @invite.suggested_song = params[:suggested_song]
 
-    if @invite.save
+    if @invite.respond_to
       redirect_to thank_you_path
     else
       render :action => 'new'
