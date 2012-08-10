@@ -23,6 +23,8 @@ gem 'bootstrap-will_paginate'
 
 gem 'state_machine'
 
+gem 'newrelic_rpm'
+
 group :test, :development do
   gem 'rspec-rails', '~> 2.0'
 end
