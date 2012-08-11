@@ -1,23 +1,25 @@
 class ResponsesController < ApplicationController
   def new
+    @response = Response.new
 
-  end
-
-  def update
-    @invite = Invite.find_by_invite_name params[:name]
-
-    if @invite.nil?
-      flash[:error] = "Could not find that invite"
-      render :action => 'new'
-    end
-
-    @invite.guests = params[:guests]
-    @invite.suggested_song = params[:suggested_song]
-
-    if @invite.respond_back
-      redirect_to thank_you_path
-    else
-      render :action => 'new'
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @response }
     end
   end
+
+  def create
+    @response = Response.new(params[:response])
+
+    respond_to do |format|
+      if @response.save
+        format.html { redirect_to thank_you_path, notice: 'Response was successfully created.' }
+        format.json { render json: @response, status: :created, location: @response }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @response.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 end
