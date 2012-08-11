@@ -4,7 +4,7 @@ class Admin::ResponsesController < ApplicationController
   # GET /admin/responses
   # GET /admin/responses.json
   def index
-    @responses = Admin::Response.all
+    @responses = Admin::Response.order('created_at desc').paginate(:page => params[:page], :per_page => 20)
 
     respond_to do |format|
       format.html # index.html.erb
