@@ -1,3 +1,5 @@
+require 'csv'
+
 class InvitesController < ApplicationController
   before_filter :authenticate_admin!
 
@@ -5,7 +7,15 @@ class InvitesController < ApplicationController
     @invites = Invite.find(params[:invite_ids])
 
     @invites.each do |invite|
-      invite.send_to
+      invite.send_out
+    end
+
+    redirect_to invites_path
+  end
+
+  def bulk_import_invites
+    CSV.foreach(params[:invites].tempfile.path, :skip_blanks => true) do |row|
+      Invite.create! :name => row[0], :anticipated_guests => row[1], :tier => params[:tier_override] || row[2]
     end
 
     redirect_to invites_path

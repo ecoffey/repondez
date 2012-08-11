@@ -5,6 +5,7 @@ Repondez::Application.routes.draw do
 
   scope '/admin/' do
     post 'invites/bulk_send_invites', :to => 'invites#bulk_send_invites'
+    post 'invites/bulk_import_invites', :to => 'invites#bulk_import_invites', :as => 'bulk_import_invites'
 
     resources :invites
   end

@@ -6,16 +6,14 @@
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @invite.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:address) %>:</strong></dt>
-  <dd><%= @invite.address %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:passphrase) %>:</strong></dt>
-  <dd><%= @invite.passphrase %></dd>
   <dt><strong><%= model_class.human_attribute_name(:state) %>:</strong></dt>
   <dd><%= @invite.state %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:guests) %>:</strong></dt>
-  <dd><%= @invite.guests %></dd>
   <dt><strong><%= model_class.human_attribute_name(:tier) %>:</strong></dt>
   <dd><%= @invite.tier %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:guests) %>:</strong></dt>
+  <dd><%= @invite.guests %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:anticipated_guests) %>:</strong></dt>
+  <dd><%= @invite.anticipated_guests %></dd>
 </dl>
 
 <div class="form-actions">
