@@ -6,21 +6,21 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :guests, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.radio_button :attending, "1", :class => "btn" %><label for="attending_true">Count me in!</label>
+      <%= f.radio_button :attending, "0", :class => "btn" %><label for="attending_false">Regrets, celebrating from afar.</label>
+    </div>
+  </div>
+  <div class="control-group is_attending" style="display: none;">
+    <label for="guests" class="control-label"># of guests in your party?</label>
     <div class="controls">
       <%= f.number_field :guests, :class => 'number_field' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :suggested_song, :class => 'control-label' %>
+  <div class="control-group is_attending" style="display: none;">
+    <label for="suggested_song" class="control-label">Would you please suggest your favorite love or dance song for us?</label>
     <div class="controls">
-      <%= f.text_area :suggested_song, :class => 'text_area' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :attending, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.check_box :attending, :class => 'check_box' %>
+      <%= f.text_field :suggested_song, :class => 'text_field' %>
     </div>
   </div>
 

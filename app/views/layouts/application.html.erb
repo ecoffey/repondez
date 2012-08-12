@@ -7,6 +7,10 @@
     <title><%= content_for?(:title) ? yield(:title) : "Eoin and SJ" %></title>
     <%= csrf_meta_tags %>
 
+    <link href="http://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
@@ -15,26 +19,13 @@
     <%= stylesheet_link_tag "application", :media => "all" %>
   </head>
   <body>
-
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="<%= root_path %>">Eoin and SJ</a>
-          <div class="container nav-collapse">
-            <ul class="nav">
-              <li><%= link_to "RSVP", rsvp_path %></li>
-            </ul>
-          </div><!--/.nav-collapse -->
+    <div class="container">
+      <div class="row" id="header">
+        <div class="span12">
+          <img src="/images/bearbunny.png" />
+          <p class="tagline">Eoin and Sarah Jane</p>
         </div>
       </div>
-    </div>
-
-    <div class="container">
       <div class="content">
         <div class="row">
            <div class="<%= content_for?(:sidebar) ? "span9" : "span12" %>">
@@ -53,9 +44,7 @@
         </div><!--/row-->
       </div><!--/content-->
 
-      <footer>
-        <p>&copy; Company 2012</p>
-      </footer>
+
 
     </div> <!-- /container -->
 
