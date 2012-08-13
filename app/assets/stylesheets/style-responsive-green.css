@@ -55,8 +55,8 @@ input#response_attending_1
 
 /*** CATCHY CONTENT ****/
 #catchycontent{ text-align:center;}
-#catchycontent h2{ font-size:30px; font-family: 'Droid Serif', serif; font-weight: 400; margin-bottom:30px; }
-#catchycontent p{ font-size:16px; font-family: 'Droid Serif', serif; line-height:26px; font-weight:400; font-style:italic;}
+#catchycontent h2{ margin-bottom:30px; }
+#catchycontent p{}
 
 /*** SUBSCRIBE ****/
 #subscribe{text-align:center; margin-top:40px;}

@@ -1,4 +1,6 @@
 class ResponsesController < ApplicationController
+  layout "rsvp"
+
   def new
     @response = Response.new
 
