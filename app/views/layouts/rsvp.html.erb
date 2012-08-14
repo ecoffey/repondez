@@ -22,13 +22,30 @@
     <div class="container">
       <div class="row" id="header">
         <div class="span12">
+          <a href="<%= root_path %>">
           <img src="/images/bearbunny.png" />
-          <p class="tagline">Eoin and Sarah Jane</p>
+            </a>
+          <p class="tagline"><a style="color: black;" href="<%= root_path %>">Eoin and Sarah Jane</a></p>
         </div>
       </div>
       <div class="content rsvp">
+
         <div class="row" style="width: 500px; margin: 0 auto;">
-           <div class="span5" style="margin-left: 10px;  ">
+           <div class="span5" style="margin-left: 10px;">
+             <ul class="nav nav-pills" style="margin-left: 10px;">
+              <li <%= active_nav? :rsvp %>>
+                <%= link_to "RSVP", rsvp_path %>
+              </li>
+              <li <%= active_nav? :where_to_stay %>>
+               <%= link_to "Where To Stay", where_to_stay_path %>
+               </li>
+               <li <%= active_nav? :how_to_get_here %>>
+               <%= link_to "How To Get Here", how_to_get_here_path %>
+               </li>
+               <li <%= active_nav? :registry %>>
+                 <%= link_to "Registry", registry_path %>
+               </li>
+             </ul>
               <%= yield %>
             </div>
         </div><!--/row-->

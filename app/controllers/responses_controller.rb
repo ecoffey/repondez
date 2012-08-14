@@ -2,6 +2,8 @@ class ResponsesController < ApplicationController
   layout "rsvp"
 
   def new
+    @active_nav = :rsvp
+
     @response = Response.new
 
     respond_to do |format|

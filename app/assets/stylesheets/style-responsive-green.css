@@ -21,13 +21,18 @@ Clases			:	{ body:color, #catchcontent h2 and p, }
 @font-face { font-family: champignon; src: url(/fonts/Champignon.ttf) format("truetype"); }
 @font-face { font-family: Champignon; font-weight: bold; src: url('/fonts/champignonaltswash.ttf'); }
 
-body{ font-family: Garamond, EB Garamond, Georgia, serif; color:#525252; background:#fff url(/images/pattern1.png);}
+body{ font-family: Garamond, EB Garamond, Georgia, serif; font-size: 14pt; color:#525252; background:#fff url(/images/pattern1.png);}
+
+p {font-size: 14pt; margin-top: .5em; }
+
 /*** HEADER CONTENT ****/
 #header{margin-top:45px; margin-bottom:60px; text-align:center;}
 /*#header a{ display:block; width:129px; height:131px; background:url(/images/logo.png) no-repeat center; text-indent:-9999px; margin:0 auto;}
 */
 
 .rsvp h1 { text-align: center; margin-bottom: 1.5em; }
+
+ul.nav a { color: #333; }
 
 input#response_attending_0
 {

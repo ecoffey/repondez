@@ -12,4 +12,8 @@ Repondez::Application.routes.draw do
   post '/rsvp', to: 'responses#create'
 
   get '/thank_you', to: 'home#thank_you'
+
+  get '/registry', to: 'home#registry'
+  get '/where_to_stay', to: 'home#where_to_stay'
+  get '/how_to_get_here', to: 'home#how_to_get_here'
 end
