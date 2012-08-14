@@ -1,0 +1,4 @@
+@font-face { font-family: champignon; src: url(/fonts/Champignon.ttf) format("truetype"); }
+@font-face { font-family: Champignon; font-weight: bold; src: url('/fonts/champignonaltswash.ttf'); }
+
+body{ font-family: Garamond, EB Garamond, Georgia, serif; color:#525252; background:#fff url(/images/pattern1.png);}

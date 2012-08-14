@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  layout "rsvp"
+
   def index
   end
 

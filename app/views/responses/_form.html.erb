@@ -1,11 +1,9 @@
 <%= form_for @response, :html => { :class => 'form-horizontal' } do |f| %>
   <% if @response.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@response.errors.count, "error") %> prohibited this response from being saved:</h2>
-
-      <ul>
+      <ul style="list-style: none; margin-left: 2em; font-size: 16pt; margin-bottom: 2em;">
       <% @response.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li style="margin-bottom: .5em"><%= msg %></li>
       <% end %>
       </ul>
     </div>

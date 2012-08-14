@@ -27,6 +27,8 @@ body{ font-family: Garamond, EB Garamond, Georgia, serif; color:#525252; backgro
 /*#header a{ display:block; width:129px; height:131px; background:url(/images/logo.png) no-repeat center; text-indent:-9999px; margin:0 auto;}
 */
 
+.rsvp h1 { text-align: center; margin-bottom: 1.5em; }
+
 input#response_attending_0
 {
   float: left;
