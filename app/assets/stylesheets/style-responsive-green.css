@@ -23,7 +23,7 @@ Clases			:	{ body:color, #catchcontent h2 and p, }
 
 body{ font-family: Garamond, EB Garamond, Georgia, serif; font-size: 14pt; color:#525252; background:#fff url(/images/pattern1.png);}
 
-p {font-size: 14pt; margin-top: .5em; }
+.rsvp p {font-size: 14pt; margin-top: .5em; font-family: Garamond, EB Garamond, Georgia, serif; }
 
 /*** HEADER CONTENT ****/
 #header{margin-top:45px; margin-bottom:40px; text-align:center;}
@@ -49,7 +49,7 @@ input#response_attending_1
 #header p.tagline { font-family: champignon; font-size: 40pt; margin-top: 40px; }
 #header p.tagline a { color: black; }
 #header p.small_tagline { margin-top: 40px; }
-#header p.small_tagline a { color: black; font-family: Garamond, EB Garamond, Georgia, serif; }
+#header p.small_tagline a { color: black; font-family: Garamond, EB Garamond, Georgia, serif; font-size: 14pt; }
 
 #header a:hover{ text-decoration:none;}
 #header a i{color:#3e9b20; font-size:18px; line-height:28px; padding:0 5px;
