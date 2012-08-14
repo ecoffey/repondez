@@ -26,7 +26,7 @@ body{ font-family: Garamond, EB Garamond, Georgia, serif; font-size: 14pt; color
 p {font-size: 14pt; margin-top: .5em; }
 
 /*** HEADER CONTENT ****/
-#header{margin-top:45px; margin-bottom:60px; text-align:center;}
+#header{margin-top:45px; margin-bottom:40px; text-align:center;}
 /*#header a{ display:block; width:129px; height:131px; background:url(/images/logo.png) no-repeat center; text-indent:-9999px; margin:0 auto;}
 */
 
@@ -47,6 +47,9 @@ input#response_attending_1
 }
 
 #header p.tagline { font-family: champignon; font-size: 40pt; margin-top: 40px; }
+#header p.tagline a { color: black; }
+#header p.small_tagline { margin-top: 40px; }
+#header p.small_tagline a { color: black; font-family: Garamond, EB Garamond, Georgia, serif; }
 
 #header a:hover{ text-decoration:none;}
 #header a i{color:#3e9b20; font-size:18px; line-height:28px; padding:0 5px;

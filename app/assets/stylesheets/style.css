@@ -1,6 +1,6 @@
 body{ color:##525252; border-top:solid 5px #d23828; background:#fff url(/images/pattern1.png);}
 
-#header{margin-top:45px; margin-bottom:60px; text-align:center;}
+#header{margin-top:45px; margin-bottom:40px; text-align:center;}
 #header a{ display:block; width:129px; height:131px; background:url(/images/logo.png) no-repeat center; text-indent:-9999px; margin:0 auto;}
 #catchycontent{ text-align:center;}
 #catchycontent h2{ font-size:30px; font-family: 'Droid Serif', serif; font-weight: 400; margin-bottom:30px; }
