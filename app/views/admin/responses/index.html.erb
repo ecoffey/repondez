@@ -6,24 +6,22 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:guests) %></th>
       <th><%= model_class.human_attribute_name(:suggested_song) %></th>
       <th><%= model_class.human_attribute_name(:attending) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>Responded</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @responses.each do |response| %>
       <tr>
-        <td><%= link_to response.id, admin_response_path(response) %></td>
-        <td><%= response.name %></td>
+        <td><%= link_to response.name, admin_response_path(response) %></td>
         <td><%= response.guests %></td>
         <td><%= response.suggested_song %></td>
         <td><%= response.attending %></td>
-        <td><%=l response.created_at %></td>
+        <td><%= response.created_at.in_time_zone("Mountain Time (US & Canada)").strftime("%a, %B %-d, %I:%M%P") %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_admin_response_path(response), :class => 'btn btn-mini' %>
