@@ -20,7 +20,7 @@
         <td><%= link_to response.name, admin_response_path(response) %></td>
         <td><%= response.guests %></td>
         <td><%= response.suggested_song %></td>
-        <td><%= response.attending %></td>
+        <td><%= response.attending ? "yes" : "no" %></td>
         <td><%= response.created_at.in_time_zone("Mountain Time (US & Canada)").strftime("%a, %B %-d, %I:%M%P") %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
