@@ -2,11 +2,13 @@ Repondez::Application.routes.draw do
   root :to => 'home#index'
 
   devise_for :admins, :path => 'admin'
+
   namespace 'admin' do
     resources :responses
   end
 
   resources :responses, :only => [:new, :create]
+  get '/responses', to: 'responses#new'
 
   get '/rsvp', to: 'responses#new'
   post '/rsvp', to: 'responses#create'
