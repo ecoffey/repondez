@@ -18,6 +18,8 @@ gem 'bootstrap-will_paginate'
 
 gem 'newrelic_rpm'
 
+gem 'airbrake'
+
 group :test, :development do
   gem 'rspec-rails', '~> 2.0'
 end
