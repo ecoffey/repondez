@@ -4,9 +4,10 @@ class Admin::ResponsesController < ApplicationController
   # GET /admin/responses
   # GET /admin/responses.json
   def index
-    if params[:name]
-      @search_name = params[:name]
-      conditions = params[:name].split(' ').map { |n| "name ilike '%#{n}'" }.join(" OR ")
+    @search_name = params[:search_name]
+
+    if @search_name
+      conditions = @search_name.split(' ').map { |n| "name ilike '%#{n}'" }.join(" OR ")
       responses = Admin::Response.where(conditions)
     else
       responses = Admin::Response
