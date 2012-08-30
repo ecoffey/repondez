@@ -7,7 +7,7 @@ class Admin::ResponsesController < ApplicationController
     @search_name = params[:search_name]
 
     if @search_name
-      conditions = @search_name.split(' ').map { |n| "name ilike '%#{n}'" }.join(" OR ")
+      conditions = @search_name.split(' ').map { |n| "name ilike '%#{n}%'" }.join(" OR ")
       responses = Admin::Response.where(conditions)
     else
       responses = Admin::Response
