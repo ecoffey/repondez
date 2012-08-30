@@ -5,6 +5,12 @@
     Confirmed Guests: <%= Response.confirmed_guest_count %>
   </h2>
 </div>
+<div>
+  <%= form_tag admin_responses_path, :method => :get do %>
+    <%= text_field_tag :search_name, @search_name %>
+    <%= submit_tag 'Search' %>
+  <% end %>
+</div>
 <%= will_paginate @responses %>
 <table class="table table-striped">
   <thead>

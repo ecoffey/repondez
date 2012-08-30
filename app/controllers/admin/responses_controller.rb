@@ -4,7 +4,14 @@ class Admin::ResponsesController < ApplicationController
   # GET /admin/responses
   # GET /admin/responses.json
   def index
-    @responses = Admin::Response.order('created_at desc').paginate(:page => params[:page], :per_page => 20)
+    if params[:name]
+      @search_name = params[:name]
+      conditions = params[:name].split(' ').map { |n| "name ilike '%#{n}'" }.join(" OR ")
+      responses = Admin::Response.where(conditions)
+    else
+      responses = Admin::Response
+    end
+    @responses = responses.order('created_at desc').paginate(:page => params[:page], :per_page => 20)
 
     respond_to do |format|
       format.html # index.html.erb
